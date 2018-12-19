@@ -1,0 +1,11 @@
+version: 2.1
+executors:
+  ci-executor:
+    docker:
+      - image: circleci/ruby:2.4.1-node-browsers
+jobs:
+  build:
+    executor: ci-executor
+
+    steps:
+      - checkout
