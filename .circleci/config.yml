@@ -2,7 +2,7 @@ version: 2.1
 executors:
   ci-executor:
     docker:
-      - image: REPLACE-ME-WITH-DOCKER-IMAGE
+      - image: circleci/ruby:2.4.1-node-browsers
 jobs:
   build:
     executor: ci-executor
@@ -16,7 +16,7 @@ jobs:
 
       - run:
           name: build the jekyll site
-          command: REPLACE-ME-WITH-BUILD-COMMAND
+          command: bundle exec jekyll build
 
       - run:
           name: notify build is finished
